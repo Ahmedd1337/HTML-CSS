@@ -1,0 +1,42 @@
+:root:has(.darkmode input:checked)
+{
+        /*colors*/
+        --main-color:#ffffff;
+        --white-text:#171717;
+        --off-text:#252525;
+        --red-text:#D18700;
+        --off-dark:#D3D3D3;
+    
+        /*bg-color*/
+        --bg-color:#171717;
+        --bg-off:#252525;
+}
+
+body:has(.darkmode input:checked){
+    background-color: #171717;
+}
+body:has(.darkmode input:checked) .card picture::before{
+    background-image: url(../images/team-shape-dark.svg);
+}
+
+body:not(:has(:target)):has(.darkmode input:checked) .home-l,
+body:has(.home:target):has(.darkmode input:checked) .home-l,
+body:has(.chef:target):has(.darkmode input:checked) .chef-l,
+body:has(.gallery:target):has(.darkmode input:checked) .gallery-l,
+body:has(.contact:target):has(.darkmode input:checked) .contact-l{
+    color: var(--main-color);
+}
+body:not(:has(:target)) .home-l::before,
+body:has(.home:target) .home-l::before,
+body:has(.chef:target) .chef-l::before,
+body:has(.gallery:target) .gallery-l::before,
+body:has(.contact:target) .contact-l::before{
+    width: 100%;
+}
+
+body:has(.darkmode input:checked) .darkmode .sun {
+    display: block;
+}
+body:has(.darkmode input:checked) .darkmode .moon {
+    display: none;
+}
